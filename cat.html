@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>CATARINA ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #d63384;
+    }
+
+    .adjetivos {
+      margin: 30px auto;
+      max-width: 600px;
+      font-size: 18px;
+    }
+
+    .botoes {
+      margin-top: 40px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .sim {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .nao {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .porque {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    /* Loop de ADORO-TE */
+    #loopMensagem {
+      margin-top: 50px;
+      font-size: 24px;
+      color: #d63384;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1> Catarina, já te disse hoje que és linda? ❤️</h1>
+
+  <div class="botoes">
+    <button class="sim" onclick="alert('MAIS UMA VEZ DIGO ADORO TE MIUDA! 😄')">Sim</button>
+    <button class="nao" onclick="alert('DESCULPA , ÉS LINDA BABY ❤️')">Não</button>
+    <button class="porque" onclick="document.getElementById('popup').style.display='block'">Porquê?</button>
+  </div>
+
+  <!-- Modal -->
+  <div id="popup" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+      <p>
+        Porque és: Inteligente, encantadora, divertida, meiga, radiante, determinada, criativa, bondosa, única, inspiradora, maravilhosa, elegante, carismática, gentil, poderosa, fascinante, adorável, sensível, doce, vibrante, generosa, incrível, talentosa, especial. ❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- Loop de mensagem -->
+  <div id="loopMensagem"></div>
+
+  <footer>
+    <p>By José do Haiti</p>
+    <img src="dog.jpg" alt="Cachorrinho fofo">
+  </footer>
+
+  <script>
+    // Fechar o modal ao clicar fora do conteúdo
+    window.onclick = function(event) {
+      const modal = document.getElementById('popup');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  
+    // Loop de "ADORO-TE!" letra a letra
+    const loopDiv = document.getElementById('loopMensagem');
+    const mensagem = "ADORO-TE!❤️";
+    let i = 0;
+  
+    function escreverLoop() {
+      loopDiv.innerText = mensagem.substring(0, i);
+      i++;
+      if (i > mensagem.length) {
+        i = 0; // Reinicia o loop
+        setTimeout(escreverLoop, 500); // Pequena pausa antes de recomeçar
+      } else {
+        setTimeout(escreverLoop, 150); // Velocidade da escrita
+      }
+    }
+  
+    escreverLoop();
+  </script>
+  
+</body>
+</html>
