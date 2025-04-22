@@ -82,6 +82,14 @@
     .close:hover {
       color: #000;
     }
+
+    /* Loop de ADORO-TE */
+    #loopMensagem {
+      margin-top: 50px;
+      font-size: 24px;
+      color: #d63384;
+      height: 30px;
+    }
   </style>
 </head>
 <body>
@@ -103,9 +111,12 @@
     </div>
   </div>
 
+  <!-- Loop de mensagem -->
+  <div id="loopMensagem"></div>
+
   <footer>
-    By José do Haiti
-    <img src="dog.jpg" alt="Cao">
+    <p>By José do Haiti</p>
+    <img src="dog.jpg" alt="Cachorrinho fofo">
   </footer>
 
   <script>
@@ -116,7 +127,26 @@
         modal.style.display = "none";
       }
     }
+  
+    // Loop de "ADORO-TE!" letra a letra
+    const loopDiv = document.getElementById('loopMensagem');
+    const mensagem = "ADORO-TE!❤️";
+    let i = 0;
+  
+    function escreverLoop() {
+      loopDiv.innerText = mensagem.substring(0, i);
+      i++;
+      if (i > mensagem.length) {
+        i = 0; // Reinicia o loop
+        setTimeout(escreverLoop, 500); // Pequena pausa antes de recomeçar
+      } else {
+        setTimeout(escreverLoop, 150); // Velocidade da escrita
+      }
+    }
+  
+    escreverLoop();
   </script>
+  
 </body>
 </html>
 
